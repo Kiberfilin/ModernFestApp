@@ -59,4 +59,6 @@ dependencies {
     androidTestImplementation androidxEspressoCore
     androidTestImplementation compose_ui_test
     debugImplementation compose_ui_test_manifest
+    implementation vkSDKcore
+    implementation vkSDKapi
 }

@@ -26,4 +26,9 @@ ext {
     androidxJunit = "androidx.test.ext:junit:$androidxJunitVersion"
     androidxEspressoCoreVersion = '3.4.0'
     androidxEspressoCore = "androidx.test.espresso:espresso-core:$androidxEspressoCoreVersion"
+
+    //vc.com android sdk
+    vkSDKVersion = '3.5.2'
+    vkSDKcore = "com.vk:android-sdk-core:$vkSDKVersion"
+    vkSDKapi = "com.vk:android-sdk-api:$vkSDKVersion"
 }
