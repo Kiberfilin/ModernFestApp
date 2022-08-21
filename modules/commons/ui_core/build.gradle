@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -7,16 +7,11 @@ android {
     compileSdk "$sdkVersions.compileSdk".toInteger()
 
     defaultConfig {
-        applicationId "ru.cybereagleowl.modernfestapp"
         minSdk "$sdkVersions.minSdk".toInteger()
         targetSdk "$sdkVersions.targetSdk".toInteger()
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary true
-        }
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -38,15 +33,9 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion "$compose_compiler_version"
     }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
-    }
 }
 
 dependencies {
-
     implementation ktxcore
     implementation compose_ui
     implementation compose_material
@@ -54,17 +43,6 @@ dependencies {
     implementation compose_ui_tooling_preview
     implementation lifecycle_runtime
     implementation compose_activity
-    testImplementation junit
-    androidTestImplementation androidxJunit
-    androidTestImplementation androidxEspressoCore
     androidTestImplementation compose_ui_test
     debugImplementation compose_ui_test_manifest
-    implementation vkSDKcore
-    implementation vkSDKapi
-
-    //core
-
-    //commons
-    implementation project(':modules:commons:ui_core')
-    //features
 }
