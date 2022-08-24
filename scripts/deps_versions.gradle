@@ -32,4 +32,9 @@ ext {
     vkSDKVersion = '3.5.2'
     vkSDKcore = "com.vk:android-sdk-core:$vkSDKVersion"
     vkSDKapi = "com.vk:android-sdk-api:$vkSDKVersion"
+
+    //Dagger 2
+    daggerVersion = '2.43.2'
+    dagger = "com.google.dagger:dagger:$daggerVersion"
+    daggerCompiler = "com.google.dagger:dagger-compiler:$daggerVersion"
 }

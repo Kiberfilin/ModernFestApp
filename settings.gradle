@@ -15,3 +15,9 @@ dependencyResolutionManagement {
 rootProject.name = "Modern Fest App"
 include ':app'
 include ':modules:commons:ui_core'
+include ':modules:base:core_impl'
+include ':modules:base:core_api'
+include ':modules:base:core'
+include ':modules:features:authorization'
+include ':modules:features:main_menu'
+include ':modules:features:news'
