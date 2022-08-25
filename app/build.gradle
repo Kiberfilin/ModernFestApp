@@ -55,6 +55,7 @@ dependencies {
     implementation compose_ui_tooling_preview
     implementation lifecycle_runtime
     implementation compose_activity
+    implementation composeNavigation
     testImplementation junit
     androidTestImplementation androidxJunit
     androidTestImplementation androidxEspressoCore
