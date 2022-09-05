@@ -72,6 +72,6 @@ dependencies {
     implementation project(':modules:commons:ui_core')
     //features
     implementation project(':modules:features:authorization')
-    implementation project(':modules:features:main_menu')
+    implementation project(':modules:features:home_screen')
     implementation project(':modules:features:news')
 }

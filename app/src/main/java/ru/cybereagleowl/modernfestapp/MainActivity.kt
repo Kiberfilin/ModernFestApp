@@ -18,8 +18,8 @@ import ru.cybereagleowl.modernfestapp.ui.theme.ModernFestAppTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        authLauncher.launch(arrayListOf(VKScope.WALL, VKScope.PHOTOS))
-        /*setContent {
+        //authLauncher.launch(arrayListOf(VKScope.WALL, VKScope.PHOTOS))
+        setContent {
             ModernFestAppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
@@ -29,10 +29,10 @@ class MainActivity : ComponentActivity() {
                     Greeting("Android")
                 }
             }
-        }*/
+        }
     }
 
-    private val authLauncher = VK.login(this) { result: VKAuthenticationResult ->
+    /*private val authLauncher = VK.login(this) { result: VKAuthenticationResult ->
         setContent {
             ModernFestAppTheme {
                 // A surface container using the 'background' color from the theme
@@ -54,6 +54,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+*/
 }
 
 @Composable
@@ -68,3 +69,19 @@ fun DefaultPreview() {
         Greeting("Android")
     }
 }
+
+/*
+Navigation draft:
+
+* Home
+    -Concerts
+    -News
+* Media
+    -Photo
+    -Video
+* Information
+* Settings
+    -Settings
+    -Profile
+    -About
+ */
