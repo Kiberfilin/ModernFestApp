@@ -1,0 +1,27 @@
+package ru.cybereagleowl.events
+
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+
+@Composable
+fun EventsStub() {
+    Column() {
+        Text(text = "Events screen composable")
+        Spacer(modifier = Modifier.height(8.dp))
+        Text(text = "Event 1")
+        Text(text = "Event 2")
+        Text(text = "Event 3")
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun EventsStubPreview() {
+    EventsStub()
+}

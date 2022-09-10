@@ -41,6 +41,7 @@ dependencies {
     implementation compose_ui
     implementation compose_material
     debugImplementation compose_ui_tooling
+    implementation composeNavigation
     implementation compose_ui_tooling_preview
     implementation lifecycle_runtime
     implementation compose_activity
@@ -56,4 +57,6 @@ dependencies {
 
     api project(':modules:base:core_api')
     implementation project(':modules:commons:ui_core')
+    implementation project(':modules:features:news')
+    implementation project(':modules:features:events')
 }

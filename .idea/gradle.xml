@@ -21,6 +21,7 @@
             <option value="$PROJECT_DIR$/modules/commons/ui_core" />
             <option value="$PROJECT_DIR$/modules/features" />
             <option value="$PROJECT_DIR$/modules/features/authorization" />
+            <option value="$PROJECT_DIR$/modules/features/events" />
             <option value="$PROJECT_DIR$/modules/features/home_screen" />
             <option value="$PROJECT_DIR$/modules/features/news" />
           </set>

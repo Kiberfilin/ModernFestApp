@@ -10,10 +10,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKAuthenticationResult
 import com.vk.api.sdk.auth.VKScope
+import ru.cybereagleowl.modernfestapp.navigation.ModernFestAppNavHost
 import ru.cybereagleowl.modernfestapp.ui.theme.ModernFestAppTheme
+import ru.cybereagleowl.news.NewsStub
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,11 +25,12 @@ class MainActivity : ComponentActivity() {
         setContent {
             ModernFestAppTheme {
                 // A surface container using the 'background' color from the theme
+                val navController = rememberNavController()
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    ModernFestAppNavHost(navController = navController)
                 }
             }
         }
@@ -66,7 +70,8 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     ModernFestAppTheme {
-        Greeting("Android")
+        //Greeting("Android")
+        NewsStub()
     }
 }
 
