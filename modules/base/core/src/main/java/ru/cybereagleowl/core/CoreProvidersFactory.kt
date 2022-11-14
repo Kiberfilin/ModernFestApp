@@ -1,18 +1,21 @@
 package ru.cybereagleowl.core
 
+import ru.cybereagleowl.core_api.providers.ActivityProvider
 import ru.cybereagleowl.core_api.providers.AppProvider
 import ru.cybereagleowl.core_api.providers.UseCasesProvider
-import ru.cybereagleowl.core_api.providers.utils.UtilsProvidersFacade
+import ru.cybereagleowl.core_api.providers.facades.utils.UtilsProvidersFacade
+import ru.cybereagleowl.core_impl.di.clean.CleanComponent
 import ru.cybereagleowl.core_impl.di.clean.DaggerCleanComponent
 import ru.cybereagleowl.core_impl.di.utils.DaggerUtilsComponent
-import ru.cybereagleowl.core_impl.di.utils.UtilsModule
 
 object CoreProvidersFactory {
-    fun createUtilsProvider(appProvider: AppProvider): UtilsProvidersFacade = DaggerUtilsComponent.builder()
-        .appProvider(appProvider)
-        .utilsModule(UtilsModule())
-        .build()
-    fun createUseCasesProvider(appProvider: AppProvider): UseCasesProvider = DaggerCleanComponent.builder()
-        .utilsProvidersFacade(createUtilsProvider(appProvider))
-        .build()
+    fun createUtilsProvider(appProvider: AppProvider): UtilsProvidersFacade =
+        DaggerUtilsComponent.builder()
+            .appProvider(appProvider)
+            .build()
+
+    fun createUseCasesProvider(
+        utilsProvidersFacade: UtilsProvidersFacade,
+        activityProvider: ActivityProvider
+    ): UseCasesProvider = CleanComponent.init(utilsProvidersFacade, activityProvider)
 }

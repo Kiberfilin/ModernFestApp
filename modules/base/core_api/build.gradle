@@ -32,8 +32,10 @@ android {
 dependencies {
 
     implementation ktxcore
+    implementation compose_activity
     testImplementation junit
     androidTestImplementation androidxJunit
     androidTestImplementation androidxEspressoCore
     implementation dagger
+    implementation coroutinesCore
 }

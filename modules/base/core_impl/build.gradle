@@ -33,6 +33,7 @@ android {
 dependencies {
 
     implementation ktxcore
+    implementation compose_activity
     testImplementation junit
     androidTestImplementation androidxJunit
     androidTestImplementation androidxEspressoCore
@@ -40,6 +41,7 @@ dependencies {
     implementation vkSDKapi
     implementation dagger
     kapt daggerCompiler
+    implementation coroutinesCore
 
     api project(':modules:base:core_api')
     implementation project(':modules:commons:ui_core')

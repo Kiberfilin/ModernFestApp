@@ -1,0 +1,3 @@
+package ru.cybereagleowl.core_api.providers.facades.utils
+
+interface UtilsProvidersFacade

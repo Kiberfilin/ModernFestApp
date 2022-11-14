@@ -11,16 +11,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.vk.api.sdk.VK
-import com.vk.api.sdk.auth.VKAuthenticationResult
-import com.vk.api.sdk.auth.VKScope
+import ru.cybereagleowl.core_api.providers.facades.AppWithFacade
+import ru.cybereagleowl.core_api.providers.facades.ProvidersFacade
+import ru.cybereagleowl.modernfestapp.di.FacadeComponent
 import ru.cybereagleowl.modernfestapp.navigation.ModernFestAppNavHost
 import ru.cybereagleowl.modernfestapp.ui.theme.ModernFestAppTheme
-import ru.cybereagleowl.news.NewsStub
 
 class MainActivity : ComponentActivity() {
+    lateinit var diRoot: ProvidersFacade
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        diRoot = FacadeComponent.init(this)
         //authLauncher.launch(arrayListOf(VKScope.WALL, VKScope.PHOTOS))
         setContent {
             ModernFestAppTheme {
@@ -30,7 +31,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    ModernFestAppNavHost(navController = navController)
+                    ModernFestAppNavHost(
+                        navController = navController,
+                        facade = diRoot,
+                        activity = this
+                    )
                 }
             }
         }
@@ -71,7 +76,7 @@ fun Greeting(name: String) {
 fun DefaultPreview() {
     ModernFestAppTheme {
         //Greeting("Android")
-        NewsStub()
+        //NewsStub()
     }
 }
 

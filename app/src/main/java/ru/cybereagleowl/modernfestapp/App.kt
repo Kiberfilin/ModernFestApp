@@ -3,14 +3,14 @@ package ru.cybereagleowl.modernfestapp
 import android.app.Application
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.VKTokenExpiredHandler
-import ru.cybereagleowl.core_api.providers.AppWithFacade
-import ru.cybereagleowl.core_api.providers.ProvidersFacade
-import ru.cybereagleowl.modernfestapp.di.application.FacadeComponent
+import ru.cybereagleowl.core_api.providers.facades.AppProvidersFacade
+import ru.cybereagleowl.core_api.providers.facades.AppWithFacade
+import ru.cybereagleowl.modernfestapp.di.application.AppFacadeComponent
 
 class App : Application(), AppWithFacade {
     override fun onCreate() {
         super.onCreate()
-        (getFacade() as FacadeComponent).inject(this)
+        (getFacade() as AppFacadeComponent).inject(this)
         VK.addTokenExpiredHandler(tokenTracker)//need to move to main menu
     }
 
@@ -22,10 +22,10 @@ class App : Application(), AppWithFacade {
         }
     }
 
-    override fun getFacade(): ProvidersFacade =
-        facadeComponent ?: FacadeComponent.init(this).also { facadeComponent = it }
+    override fun getFacade(): AppProvidersFacade =
+        appFacadeComponent ?: AppFacadeComponent.init(this).also { appFacadeComponent = it }
 
     companion object {
-        private var facadeComponent: FacadeComponent? = null
+        private var appFacadeComponent: AppFacadeComponent? = null
     }
 }

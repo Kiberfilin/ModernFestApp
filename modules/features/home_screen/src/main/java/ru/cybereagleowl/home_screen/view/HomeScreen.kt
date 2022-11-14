@@ -1,4 +1,4 @@
-package ru.cybereagleowl.home_screen
+package ru.cybereagleowl.home_screen.view
 
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable

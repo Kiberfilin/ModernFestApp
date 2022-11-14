@@ -73,6 +73,4 @@ dependencies {
     //features
     implementation project(':modules:features:authorization')
     implementation project(':modules:features:home_screen')
-    implementation project(':modules:features:news')
-    implementation project(':modules:features:events')
 }
